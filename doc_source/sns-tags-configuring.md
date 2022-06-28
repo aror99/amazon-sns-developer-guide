@@ -1,39 +1,14 @@
 # Configuring Amazon SNS topic tags<a name="sns-tags-configuring"></a>
 
-This page shows how you can use the AWS Management Console, an AWS SDK, and the AWS CLI to configure tags for an [Amazon SNS topic](sns-tags.md)\.
-
 **Important**  
 Do not add personally identifiable information \(PII\) or other confidential or sensitive information in tags\. Tags are accessible to other Amazon Web Services, including billing\. Tags are not intended to be used for private or sensitive data\.
 
 **Topics**
-+ [Listing, adding, and removing tags for an Amazon SNS topic using the AWS Management Console](#list-add-update-remove-tags-for-topic-aws-console)
 + [Adding tags to a topic using an AWS SDK](#tag-resource-aws-sdks)
 + [Managing tags with Amazon SNS API actions](#manage-tags-with-sns-api-actions)
 + [API actions that support ABAC](#api-actions-that-support-abac)
 
-## Listing, adding, and removing tags for an Amazon SNS topic using the AWS Management Console<a name="list-add-update-remove-tags-for-topic-aws-console"></a>
-
-1. Sign in to the [Amazon SNS console](https://console.aws.amazon.com/sns/home)\.
-
-1. On the navigation panel, choose **Topics**\.
-
-1. On the **Topics** page, choose a topic and then choose **Edit**\.
-
-1. Expand the **Tags** section\.
-
-   The tags added to the topic are listed\.
-
-1. Modify topic tags:
-   + To add a tag, choose **Add tag** and enter a **Key** and **Value** \(optional\)\.
-   + To remove a tag, choose **Remove tag** next to a key\-value pair\.
-
-1. Choose **Save changes**\.
-
 ## Adding tags to a topic using an AWS SDK<a name="tag-resource-aws-sdks"></a>
-
-To use an AWS SDK, you must configure it with your credentials\. For more information, see [The shared config and credentials files](https://docs.aws.amazon.com/sdkref/latest/guide/creds-config-files.html) in the *AWS SDKs and Tools Reference Guide*\.
-
-The following code examples show how to add tags to an Amazon SNS topic\.
 
 ------
 #### [ Java ]
@@ -82,36 +57,6 @@ The following code examples show how to add tags to an Amazon SNS topic\.
 **SDK for Kotlin**  
 This is prerelease documentation for a feature in preview release\. It is subject to change\.
  To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/kotlin/services/sns#code-examples)\. 
-  
-
-```
-suspend fun addTopicTags(topicArn: String) {
-
-    val tag = Tag {
-        key ="Team"
-        value = "Development"
-    }
-
-    val tag2 = Tag {
-        key = "Environment"
-        value = "Gamma"
-    }
-
-    val tagList = mutableListOf<Tag>()
-        tagList.add(tag)
-        tagList.add(tag2)
-
-    val request = TagResourceRequest {
-        resourceArn=topicArn
-        tags = tagList
-    }
-
-    SnsClient { region = "us-east-1" }.use { snsClient ->
-        snsClient.tagResource(request)
-        println("Tags have been added to $topicArn")
-    }
-}
-```
 +  For API details, see [TagResource](https://github.com/awslabs/aws-sdk-kotlin#generating-api-documentation) in *AWS SDK for Kotlin API reference*\. 
 
 ------
