@@ -1,6 +1,5 @@
 # Using Amazon SNS with an AWS SDK<a name="sdk-general-information-section"></a>
 
-AWS software development kits \(SDKs\) are available for many popular programming languages\. Each SDK provides an API, code examples, and documentation that make it easier for developers to build applications in their preferred language\.
 
 
 | SDK documentation | Code examples | 
@@ -15,6 +14,3 @@ AWS software development kits \(SDKs\) are available for many popular programmin
 | [AWS SDK for Ruby](https://docs.aws.amazon.com/sdk-for-ruby) | [AWS SDK for Ruby code examples](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby) | 
 
 For examples specific to Amazon SNS, see [Code examples for Amazon SNS using AWS SDKs](service_code_examples.md)\.
-
-**Example availability**  
-Can't find what you need? Request a code example by using the **Provide feedback** link at the bottom of this page\.
