@@ -18,11 +18,9 @@ Amazon's trademarks and trade dress may not be used in
    + [Features and capabilities](welcome-features.md) OK
    + [Common Amazon SNS scenarios](sns-common-scenarios.md) OK
    + [Using Amazon SNS with an AWS SDK](sdk-general-information-section.md) OK
-+ [Amazon SNS event sources and destinations](sns-event-sources-and-destinations.md)
-   + [Amazon SNS event sources](sns-event-sources.md)
-   + [Amazon SNS event destinations](sns-event-destinations.md)
-+ [Setting up access for Amazon SNS](sns-setting-up.md)
-+ [Getting started with Amazon SNS](sns-getting-started.md)
++ Amazon SNS event sources and destinations
+   + [Amazon SNS event sources](sns-event-sources.md) OK
+   + [Amazon SNS event destinations](sns-event-destinations.md) OK
 + [Configuring Amazon SNS](sns-configuring.md)
    + [Creating an Amazon SNS topic](sns-create-topic.md)
    + [Subscribing to an Amazon SNS topic](sns-create-subscribe-endpoint-to-topic.md)
