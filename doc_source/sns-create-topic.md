@@ -1,9 +1,5 @@
 # Creating an Amazon SNS topic<a name="sns-create-topic"></a>
 
-An Amazon SNS topic is a logical access point that acts as a *communication channel*\. A topic lets you group multiple *endpoints* \(such as AWS Lambda, Amazon SQS, HTTP/S, or an email address\)\.
-
-To broadcast the messages of a message\-producer system \(for example, an e\-commerce website\) working with multiple other services that require its messages \(for example, checkout and fulfillment systems\), you can create a topic for your producer system\.
-
 The first and most common Amazon SNS task is creating a topic\. This page shows how you can use the AWS Management Console, the AWS SDK for Java, and the AWS SDK for \.NET to create a topic\.
 
 During creation, you choose a topic type \(standard or FIFO\) and name the topic\. After creating a topic, you can't change the topic type or name\. All other configuration choices are optional during topic creation, and you can edit them later\.
@@ -16,44 +12,6 @@ Do not add personally identifiable information \(PII\) or other confidential or 
 + [AWS SDKs](#create-topic-aws-sdks)
 
 ## To create a topic using the AWS Management Console<a name="create-topic-aws-console"></a>
-
-1. Sign in to the [Amazon SNS console](https://console.aws.amazon.com/sns/home)\.
-
-1. Do one of the following:
-   + If no topics have ever been created under your AWS account before, read the description of Amazon SNS on the home page\.
-   + If topics have been created under your AWS account before, on the navigation panel, choose **Topics**\.
-
-1. On the **Topics** page, choose **Create topic**\.
-
-1. On the **Create topic** page, in the **Details** section, do the following:
-
-   1. For **Type**, choose a topic type \(**Standard** or **FIFO**\)\.
-
-   1. Enter a **Name** for the topic\. For a [FIFO topic](sns-fifo-topics.md), add **\.fifo** to the end of the name\.
-
-   1. \(Optional\) Enter a **Display name** for the topic\.
-
-   1. \(Optional\) For a FIFO topic, you can choose **content\-based message deduplication** to enable default message deduplication\. For more information, see [Message deduplication for FIFO topics](fifo-message-dedup.md)\.
-
-1. \(Optional\) Expand the **Encryption** section and do the following\. For more information, see [Encryption at rest](sns-server-side-encryption.md)\.
-
-   1. Choose **Enable encryption**\.
-
-   1. Specify the AWS KMS key\. For more information, see [Key terms](sns-server-side-encryption.md#sse-key-terms)\.
-
-      For each KMS type, the **Description**, **Account**, and **KMS ARN** are displayed\.
-**Important**  
-If you aren't the owner of the KMS, or if you log in with an account that doesn't have the `kms:ListAliases` and `kms:DescribeKey` permissions, you won't be able to view information about the KMS on the Amazon SNS console\.  
-Ask the owner of the KMS to grant you these permissions\. For more information, see the [AWS KMS API Permissions: Actions and Resources Reference](https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html) in the *AWS Key Management Service Developer Guide*\.
-      + The AWS managed KMS for Amazon SNS **\(Default\) alias/aws/sns** is selected by default\.
-**Note**  
-Keep the following in mind:  
-The first time you use the AWS Management Console to specify the AWS managed KMS for Amazon SNS for a topic, AWS KMS creates the AWS managed KMS for Amazon SNS\.
-Alternatively, the first time you use the `Publish` action on a topic with SSE enabled, AWS KMS creates the AWS managed KMS for Amazon SNS\.
-      + To use a custom KMS from your AWS account, choose the **AWS KMS key** field and then choose the custom KMS from the list\.
-**Note**  
-For instructions on creating custom KMSs, see [Creating Keys](https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html) in the *AWS Key Management Service Developer Guide*
-      + To use a custom KMS ARN from your AWS account or from another AWS account, enter it into the **AWS KMS key** field\.
 
 1. \(Optional\) By default, only the topic owner can publish or subscribe to the topic\. To configure additional access permissions, expand the **Access policy** section\. For more information, see [Identity and access management in Amazon SNS](sns-authentication-and-access-control.md) and [Example cases for Amazon SNS access control](sns-access-policy-use-cases.md)\. 
 **Note**  
