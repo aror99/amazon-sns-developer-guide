@@ -28,7 +28,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Amazon SNS topic tagging](sns-tags.md) OK
       + [Configuring Amazon SNS topic tags](sns-tags-configuring.md) OK
 + Message ordering and deduplication (FIFO topics)
-   + [FIFO topics example use case](fifo-example-use-case.md)
+   + [FIFO topics example use case](fifo-example-use-case.md) OK
    + [Message ordering details for FIFO topics](fifo-topic-message-ordering.md)
    + [Message grouping for FIFO topics](fifo-message-grouping.md)
    + [Message delivery for FIFO topics](fifo-message-delivery.md)
